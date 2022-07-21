@@ -62,7 +62,7 @@ class HomeCollectionViewController: UICollectionViewController {
         let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         
         let nav = UINavigationController(rootViewController: vc)
-        vc.modalPresentationStyle = .fullScreen
+        nav.modalPresentationStyle = .fullScreen
         
         //3.화면전환
         self.present(nav, animated: true)

@@ -17,6 +17,13 @@ class SearchViewController: UIViewController {
         searchViewLabel.text = "서치뷰가 위치할 뷰입니다."
         searchViewLabel.textAlignment = .center
         searchViewLabel.font = .boldSystemFont(ofSize: 25)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+    }
+    
+    @objc
+    func closeButtonClicked() {
+        self.dismiss(animated: true)
     }
     
     
