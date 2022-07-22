@@ -8,12 +8,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    var movieList = movieDetail()
+    
+
 
     @IBOutlet weak var nextViewButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         buttonDesign(btn: nextViewButton)
+        
     }
     
     func buttonDesign(btn: UIButton) {
@@ -25,6 +29,7 @@ class DetailViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         
+//        vc.movieData
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

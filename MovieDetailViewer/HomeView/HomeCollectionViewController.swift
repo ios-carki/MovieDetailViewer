@@ -10,6 +10,11 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController {
     var movieList = movieDetail()
+    
+    //데이터 전달
+//    var movieData: Movie? // 따로따로 프로퍼티를 생성하지 않고 하나의 구조체 전체를 전달 받는 이유
+    //1.귀찮아서 2.
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +38,12 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //1. 값 전달 - 데이터를 받을 공간(프로퍼티) 생성
+//        var textFieldPlaceholder = ""
+        
+//        //3값전달
+//        userTextField.text = ""
+//        testTextField.placeholder = textFieldPlaceholder
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         let r : CGFloat = CGFloat.random(in: 0.7...1)
@@ -53,11 +64,19 @@ class HomeCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
+//        vc.textfieldHolder = "도서입력 ㄱ ㄱ"
+//        //3값전달
+//        userTextField.text = ""
+//        testTextField.placeholder = textFieldPlaceholder
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
     @IBAction func searchViewButton(_ sender: UIBarButtonItem) {
+        //1. 값 전달 - 데이터를 받을 공간(프로퍼티) 생성
+        
+        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         
