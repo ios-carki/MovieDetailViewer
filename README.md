@@ -4,7 +4,7 @@
 
 MainView => DetailView => WebView => SearchView
 
-# 7.28(목) - 서치뷰 추가
+# 7.28(목) - 웹컨트롤뷰 + 서치뷰 추가
 
 https://user-images.githubusercontent.com/44957712/181509943-6065b766-69d7-4e7d-9d6e-1e877caebdd6.mov
 
