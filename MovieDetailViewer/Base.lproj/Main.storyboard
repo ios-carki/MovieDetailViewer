@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-1o-SeT">
-                                <rect key="frame" x="160" y="484" width="80" height="14"/>
+                                <rect key="frame" x="160" y="484" width="94" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4vX-FH-s1c"/>
                                     <constraint firstAttribute="height" constant="50" id="Ya1-x5-LP7"/>
@@ -195,27 +195,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SV-wT-gnl">
-                                <rect key="frame" x="20" y="444" width="374" height="20.5"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-Yq-lIk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="CB4-RD-BTR"/>
+                                    <constraint firstAttribute="height" constant="44" id="jlh-cl-HsP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khB-EK-3LM">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bfh-N4-nzv"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="I73-6d-NI2"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WuP-i9-2Ta"/>
+                                    <barButtonItem image="arrow.backward" catalog="system" id="aWw-bj-cLE">
+                                        <connections>
+                                            <action selector="goBackButtonClicked:" destination="hCb-gD-bbx" id="shu-70-mee"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fk7-BF-e3T"/>
+                                    <barButtonItem image="arrow.clockwise" catalog="system" id="qi1-zF-D2M">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="hCb-gD-bbx" id="qMA-Ym-nhv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VPX-9k-Ubl"/>
+                                    <barButtonItem image="arrow.forward" catalog="system" id="uGb-JF-Jiv">
+                                        <connections>
+                                            <action selector="goForwardButtonClicked:" destination="hCb-gD-bbx" id="zwA-tE-VaS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYG-mV-0xs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Fo-bQ-glu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2Fo-bQ-glu" firstAttribute="trailing" secondItem="9SV-wT-gnl" secondAttribute="trailing" constant="20" id="6bb-fA-wVf"/>
-                            <constraint firstItem="9SV-wT-gnl" firstAttribute="leading" secondItem="2Fo-bQ-glu" secondAttribute="leading" constant="20" id="HUf-ze-JA8"/>
-                            <constraint firstItem="9SV-wT-gnl" firstAttribute="top" secondItem="2Fo-bQ-glu" secondAttribute="top" constant="400" id="Vbf-Y9-I5y"/>
-                            <constraint firstItem="2Fo-bQ-glu" firstAttribute="bottom" secondItem="9SV-wT-gnl" secondAttribute="bottom" constant="400" id="fQD-EH-fRC"/>
+                            <constraint firstItem="khB-EK-3LM" firstAttribute="trailing" secondItem="2Fo-bQ-glu" secondAttribute="trailing" id="AeH-7e-3dW"/>
+                            <constraint firstItem="khB-EK-3LM" firstAttribute="top" secondItem="dYG-mV-0xs" secondAttribute="bottom" id="ChI-3W-7Vp"/>
+                            <constraint firstItem="khB-EK-3LM" firstAttribute="bottom" secondItem="2Fo-bQ-glu" secondAttribute="bottom" id="Ua4-5T-q0U"/>
+                            <constraint firstItem="khB-EK-3LM" firstAttribute="leading" secondItem="2Fo-bQ-glu" secondAttribute="leading" id="dhq-67-Ukj"/>
+                            <constraint firstItem="hqh-Yq-lIk" firstAttribute="top" secondItem="2Fo-bQ-glu" secondAttribute="top" id="n1m-R9-LhB"/>
+                            <constraint firstItem="dYG-mV-0xs" firstAttribute="leading" secondItem="2Fo-bQ-glu" secondAttribute="leading" id="pbJ-Jh-gdZ"/>
+                            <constraint firstItem="hqh-Yq-lIk" firstAttribute="leading" secondItem="2Fo-bQ-glu" secondAttribute="leading" id="q1X-2U-pwD"/>
+                            <constraint firstItem="hqh-Yq-lIk" firstAttribute="trailing" secondItem="2Fo-bQ-glu" secondAttribute="trailing" id="sgO-vO-0VS"/>
+                            <constraint firstItem="dYG-mV-0xs" firstAttribute="top" secondItem="hqh-Yq-lIk" secondAttribute="bottom" id="udV-jN-vT0"/>
+                            <constraint firstItem="2Fo-bQ-glu" firstAttribute="trailing" secondItem="dYG-mV-0xs" secondAttribute="trailing" id="wOf-8p-Q42"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="9SV-wT-gnl" id="Q6j-Nn-txz"/>
+                        <outlet property="searchBar" destination="hqh-Yq-lIk" id="9dK-77-n0q"/>
+                        <outlet property="webView" destination="dYG-mV-0xs" id="f98-ff-b7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0S-js-pz9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,6 +318,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
